@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #609966;
+}
+
+.App {
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* DASHBOARD COMPONENT */
+
+.Header > h1 {
+    font-size: 4rem;
+    font-weight: 100;
+    color: #fff;
+    margin: 60px 0;
+}
+
+.Dashboard-content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+}
+
+.Dashboard-button {
+    text-align: center;
+}
+
+#Dashboard-new-btn {
+  margin: 10px 0;
+  appearance: none;
+  backface-visibility: hidden;
+  background-color: #1a7741;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  outline: none;
+  overflow: hidden;
+  padding: 13px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+#Dashboard-new-btn:hover {
+  background-color: #1e8449;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .35s;
+}
+
+#Dashboard-new-btn:active {
+  transform: translateY(2px);
+  transition-duration: .35s;
+}
+
+#Dashboard-new-btn:hover {
+  box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+}
+
+/* CARD COMPONENT */
+
+.Card {
+    width: 280px;
+    height: 360px;
+    color: #fff;
+    background-color: #7fab68;
+    margin-top: 5px;
+    border-radius: 20px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Card > img {
+    width: 260px;
+    height: 200px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+#Card-btn {
+    appearance: none;
+    background-color: #2ea44f;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+#Card-btn:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+  }
+  
+  #Card-btn:hover {
+    background-color: #2c974b;
+  }
+  
+  #Card-btn:focus {
+    box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+    outline: none;
+  }
+  
+  #Card-btn:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+  }
+  
+  #Card-btn:active {
+    background-color: #298e46;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+  }
