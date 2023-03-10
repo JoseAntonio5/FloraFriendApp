@@ -22,11 +22,10 @@ function Dashboard() {
         <Header />
         <div className='Dashboard-content'>
           {plants && plants.length > 0 ? (
-            plants.map((p) => (
+            plants.map((plant) => (
               <Card 
-                name={p.name}
-                description={p.description}
-                key={p.id}
+                plant={plant}
+                key={plant.id}
               />
             ))
           ) : (
