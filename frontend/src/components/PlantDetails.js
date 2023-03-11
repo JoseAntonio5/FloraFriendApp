@@ -19,6 +19,21 @@ function PlantDetails() {
         }
     }, [id])
 
+    const handleDelete = () => {
+
+        const confirmDelete = window.confirm("Are you sure you want to delete this plant?");
+
+        if (confirmDelete) {
+            axios
+            .delete(`http://localhost:5000/api/plants/${id}`)
+            .then(() => {
+                // Redirect to the dashboard after deleting the plant
+                navigate('/');
+            })
+            .catch(err => console.log(err));
+        }
+    };
+
     const goBack = () => {
         navigate(-1);
     }
@@ -34,6 +49,9 @@ function PlantDetails() {
 
             <h1>{currentPlant.name}</h1>
             <p>{currentPlant.description}</p>
+
+            <button className="Card-btn">Update</button><br />
+            <button className="Card-btn" onClick={handleDelete}>Delete</button><br />
 
             <button className="Card-btn" onClick={goBack}>Back</button>	
         
