@@ -34,7 +34,7 @@ function Dashboard() {
         </div>
         <div className='Dashboard-button'>
           <Link to="new-plant">
-            <button id="Dashboard-new-btn">New Plant</button>
+            <button className="Dashboard-new-btn">New Plant</button>
           </Link>
         </div>
     </div>

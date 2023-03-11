@@ -1,28 +1,45 @@
-import axios from 'axios';
-import React from 'react'
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import Header from './Header';
 
-function PlantDetails(props) {
+function PlantDetails() {
 
-    const location = useLocation();
-    const { id } = location.state;
-    const [plant, setPlant] = useState([]);
+    const navigate = useNavigate();
+    const location = useLocation()
+    const id = location.state?.plantID;
+    const [currentPlant, setCurrentPlant] = useState({})
 
     useEffect(() => {
-      axios.get(`http://localhost:5000/api/plants/${id}`)
-        .then(response => setPlant(response.data))
-        .catch(err => console.log(err));
-  
-    }, []);
+        if (id) {
+        axios
+            .get(`http://localhost:5000/api/plants/${id}`)
+            .then(response => setCurrentPlant(response.data))
+            .catch(err => console.log(err))
+        }
+    }, [id])
 
-    console.log(plant)
+    const goBack = () => {
+        navigate(-1);
+    }
+
+    if (!id) {
+        return <div>Loading...</div>
+    }
 
     return (
         <div className='PlantDetails'>
-            <h1>TESTE</h1>
+
+            <Header />
+
+            <h1>{currentPlant.name}</h1>
+            <p>{currentPlant.description}</p>
+
+            <button className="Card-btn" onClick={goBack}>Back</button>	
+        
         </div>
     )
+
 }
 
 export default PlantDetails

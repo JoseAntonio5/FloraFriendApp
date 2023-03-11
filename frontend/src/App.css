@@ -25,7 +25,7 @@ body {
 
 .Dashboard-content {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
 }
 
@@ -33,7 +33,7 @@ body {
     text-align: center;
 }
 
-#Dashboard-new-btn {
+.Dashboard-new-btn {
   margin: 10px 0;
   appearance: none;
   backface-visibility: hidden;
@@ -65,27 +65,35 @@ body {
   white-space: nowrap;
 }
 
-#Dashboard-new-btn:hover {
+.Dashboard-new-btn:hover {
   background-color: #1e8449;
   opacity: 1;
   transform: translateY(0);
   transition-duration: .35s;
 }
 
-#Dashboard-new-btn:active {
+.Dashboard-new-btn:active {
   transform: translateY(2px);
   transition-duration: .35s;
 }
 
-#Dashboard-new-btn:hover {
+.Dashboard-new-btn:hover {
   box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
+
+/* @media (min-width: 900px) {
+    .Dashboard-content { grid-template-columns: repeat(3, 1fr); }
+  }
+
+@media (min-width: 600px) {
+    .Dashboard-content { grid-template-columns: repeat(2, 1fr); }
+} */
 
 /* CARD COMPONENT */
 
 .Card {
-    width: 280px;
-    height: 360px;
+    width: 360px;
+    height: 380px;
     color: #fff;
     background-color: #7fab68;
     margin-top: 5px;
@@ -99,13 +107,14 @@ body {
 }
 
 .Card > img {
-    width: 260px;
+    width: 320px;
     height: 200px;
     margin-top: 10px;
     border-radius: 20px;
+    object-fit: cover;
 }
 
-#Card-btn {
+.Card-btn {
     appearance: none;
     background-color: #2ea44f;
     border: 1px solid rgba(27, 31, 35, .15);
@@ -130,28 +139,43 @@ body {
     white-space: nowrap;
 }
 
-#Card-btn:focus:not(:focus-visible):not(.focus-visible) {
+.Card-btn:focus:not(:focus-visible):not(.focus-visible) {
     box-shadow: none;
     outline: none;
   }
   
-  #Card-btn:hover {
+  .Card-btn:hover {
     background-color: #2c974b;
   }
   
-  #Card-btn:focus {
+  .Card-btn:focus {
     box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
     outline: none;
   }
   
-  #Card-btn:disabled {
+  .Card-btn:disabled {
     background-color: #94d3a2;
     border-color: rgba(27, 31, 35, .1);
     color: rgba(255, 255, 255, .8);
     cursor: default;
   }
   
-  #Card-btn:active {
+  .Card-btn:active {
     background-color: #298e46;
     box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
   }
+
+/* PLANT DETAILS PAGE */
+
+.PlantDetails {
+    text-align: center;
+    color: #fff;
+}
+
+.PlantDetails > h1 {
+    font-size: 4rem;
+}
+
+.PlantDetails > p {
+    margin: 60px;
+}

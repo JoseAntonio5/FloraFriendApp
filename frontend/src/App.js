@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='new-plant' element={<NewPlantForm />} />
-          <Route path="/plants/:id" component={<PlantDetails />} />
+          <Route path="/plants/:id" element={<PlantDetails />} />
         </Routes>
     </div>
   );
