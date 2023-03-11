@@ -1,9 +1,9 @@
 import React from 'react'
+import { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
+import axios from 'axios';
 import Header from './Header'
 import Card from './Card';
-import { Link } from "react-router-dom";
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import '../App.css'
 
 function Dashboard() {
@@ -35,7 +35,7 @@ function Dashboard() {
           </div>
           <div className='Dashboard-button'>
             <Link to="/new-plant">
-              <button className="Dashboard-new-btn">New Plant</button>
+              <button className="Dashboard-new-btn Dashboard-btn">New Plant</button>
             </Link>
           </div>
         </div>

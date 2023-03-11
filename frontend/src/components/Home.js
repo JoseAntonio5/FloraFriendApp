@@ -14,6 +14,7 @@ function Home() {
         <Link to="/plants">
             <button className="Dashboard-new-btn Home-btn">See All Plants</button>
         </Link>
+        <Footer />
     </div>
   )
 }

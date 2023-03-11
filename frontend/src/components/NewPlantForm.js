@@ -48,21 +48,25 @@ function NewPlantForm() {
 
   return (
     <div className='NewPlantForm'>
-      <Header />
-      <h1>Add a new plant</h1>
+      <div className='Container'>
+        <Header />
+        <div className='NewPlantForm-content'>
+          <h1>Add a new plant</h1>
 
-      <div className='NewPlantForm-form'>
-        <form onSubmit={handleSubmit}>
-          <label>Name:</label>
-          <input type="text" value={name} onChange={handleNameChange} />
+          <div className='NewPlantForm-form'>
+            <form onSubmit={handleSubmit}>
+              <label>Name:</label>
+              <input type="text" value={name} onChange={handleNameChange} />
 
-          <label>Description:</label>
-          <textarea value={description} onChange={handleDescriptionChange}></textarea>
+              <label>Description:</label>
+              <textarea value={description} onChange={handleDescriptionChange}></textarea>
 
-          <button className='Card-btn'>Submit</button>
-        </form>
+              <button className='Dashboard-new-btn'>Submit</button>
+            </form>
+          </div>
+          <button className="Dashboard-new-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
+        </div>
       </div>
-      <button className="Card-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>	
     </div>
   )
 }
