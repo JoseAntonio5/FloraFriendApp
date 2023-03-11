@@ -81,14 +81,6 @@ body {
   box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
 
-/* @media (min-width: 900px) {
-    .Dashboard-content { grid-template-columns: repeat(3, 1fr); }
-  }
-
-@media (min-width: 600px) {
-    .Dashboard-content { grid-template-columns: repeat(2, 1fr); }
-} */
-
 /* CARD COMPONENT */
 
 .Card {
@@ -178,4 +170,50 @@ body {
 
 .PlantDetails > p {
     margin: 60px;
+}
+
+/* NEW PLANT FORM */
+
+.NewPlantForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+.NewPlantForm-form > form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  
+  margin-bottom: 10px;
+
+  font-size: 1.4rem;
+
+  border: none;
+  outline: none;
+}
+
+.NewPlantForm-form > form > input {
+  height: 40px;
+  font-size: 30px;
+
+  padding-left: 5px;
+
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.NewPlantForm-form > form > textarea {
+  min-height: 100px;
+
+  padding-left: 5px;
+  margin-bottom: 10px;
+
+  border: none;
+  border-radius: 8px;
+  outline: none;
 }
