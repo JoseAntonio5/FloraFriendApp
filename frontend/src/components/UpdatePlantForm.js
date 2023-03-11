@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import Header from './Header'
 
 function UpdatePlantForm(props) {
@@ -34,13 +35,13 @@ function UpdatePlantForm(props) {
             });
         
             console.log(response.data);
-            navigate(`/plants/${plantToUpdate.id}`);
+            navigate(`/plants/`);
             
           } catch (err) {
             console.log(err);
             alert('Failed to update plant');
           }
-        }
+    }
 
     return (
         <div className='NewPlantForm'>
@@ -58,7 +59,7 @@ function UpdatePlantForm(props) {
                 <button className="Card-btn">Submit</button>
             </form>
             </div>
-            <button className="Card-btn" onClick={goBack}>Back</button>	
+            <button className="Card-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
         </div>
     )
 }

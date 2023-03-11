@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import Header from './Header'
 
 function NewPlantForm() {
@@ -33,7 +34,7 @@ function NewPlantForm() {
       });
   
       console.log(response.data);
-      navigate('/plants');
+      navigate('/');
       
     } catch (err) {
       console.log(err);
@@ -58,10 +59,10 @@ function NewPlantForm() {
           <label>Description:</label>
           <textarea value={description} onChange={handleDescriptionChange}></textarea>
 
-          <button className="Card-btn">Submit</button>
+          <button className='Card-btn'>Submit</button>
         </form>
       </div>
-      <button className="Card-btn" onClick={goBack}>Back</button>	
+      <button className="Card-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>	
     </div>
   )
 }

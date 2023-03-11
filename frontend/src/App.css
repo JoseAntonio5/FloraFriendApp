@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,22 +7,75 @@
 }
 
 body {
-    background-color: #609966;
+    background-color: #253f28;
 }
 
-.App {
+.App-background {
     min-height: 100vh;
-    width: 80%;
     margin: 0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -999;
+    background: url('../public/imgs/background.avif') no-repeat center center fixed; 
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    backdrop-filter: blur(15px);
+}
+
+/* HEADER COMPONENT */
+
+.Header, .Home-header {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 5px #000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header-buttons button.Dashboard-new-btn {
+  margin-right: 10px;
+}
+
+/* HOME COMPONENT */
+
+.Home {
+  text-align: center;
+}
+
+.Home-header {
+  font-size: 5rem;
+  justify-content: center;
+  padding-top: 8%;
+}
+
+.Home > p {
+  font-size: 2rem;
+  color: #fff;
+  font-style: italic;
+}
+
+.Home-btn {
+  font-size: 3rem !important;
+}
+
+button.Dashboard-new-btn.Home-btn {
+  margin-top: 10rem;
 }
 
 /* DASHBOARD COMPONENT */
 
-.Header > h1 {
-    font-size: 4rem;
-    font-weight: 100;
-    color: #fff;
-    margin: 60px 0;
+.Container {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .Dashboard-content {
@@ -37,7 +92,7 @@ body {
   margin: 10px 0;
   appearance: none;
   backface-visibility: hidden;
-  background-color: #1a7741;
+  background-color: #372211cc;
   border-radius: 8px;
   border-style: none;
   box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
@@ -87,7 +142,7 @@ body {
     width: 360px;
     height: 380px;
     color: #fff;
-    background-color: #7fab68;
+    background-color: rgba(32, 18, 4, 0.78);
     margin-top: 5px;
     border-radius: 20px;
     text-align: center;
@@ -96,6 +151,8 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+
+    box-shadow: 0px 0px 20px #02220b;
 }
 
 .Card > img {
@@ -108,7 +165,7 @@ body {
 
 .Card-btn {
     appearance: none;
-    background-color: #2ea44f;
+    background-color: #312512;
     border: 1px solid rgba(27, 31, 35, .15);
     border-radius: 6px;
     box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
@@ -216,4 +273,10 @@ body {
   border: none;
   border-radius: 8px;
   outline: none;
+}
+
+/* FOOTER COMPONENT */
+
+.Footer {
+  
 }

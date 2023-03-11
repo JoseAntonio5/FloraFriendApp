@@ -19,23 +19,25 @@ function Dashboard() {
 
   return (
     <div className='Dashboard'>
+      <div className='Container'>
         <Header />
-        <div className='Dashboard-content'>
-          {plants && plants.length > 0 ? (
-            plants.map((plant) => (
-              <Card 
-                plant={plant}
-                key={plant.id}
-              />
-            ))
-          ) : (
-            <p>No plants found</p>
-          )}
-        </div>
-        <div className='Dashboard-button'>
-          <Link to="/new-plant">
-            <button className="Dashboard-new-btn">New Plant</button>
-          </Link>
+          <div className='Dashboard-content'>
+            {plants && plants.length > 0 ? (
+              plants.map((plant) => (
+                <Card 
+                  plant={plant}
+                  key={plant.id}
+                />
+              ))
+            ) : (
+              <p>No plants found</p>
+            )}
+          </div>
+          <div className='Dashboard-button'>
+            <Link to="/new-plant">
+              <button className="Dashboard-new-btn">New Plant</button>
+            </Link>
+          </div>
         </div>
     </div>
   )

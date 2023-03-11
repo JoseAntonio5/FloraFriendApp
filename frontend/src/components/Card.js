@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { AiOutlinePlus } from "react-icons/ai";
 import '../App.css'
 
 function Card(props) {
@@ -13,7 +14,7 @@ function Card(props) {
             <p>{description}</p>
 
             <Link to={`/plants/${id}`} state={{ plantID: id }}>
-                <button className="Card-btn">See more</button>
+                <button className="Card-btn">More <AiOutlinePlus /> </button>
             </Link>
         </div>
     )

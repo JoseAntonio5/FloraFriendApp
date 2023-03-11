@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { AiOutlineArrowLeft, AiFillDelete, AiOutlineReload } from "react-icons/ai";
 import Header from './Header';
 
 function PlantDetails() {
@@ -9,14 +10,20 @@ function PlantDetails() {
     const location = useLocation();
     const id = location.state?.plantID;
     const [currentPlant, setCurrentPlant] = useState({})
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (id) {
-        axios
-            .get(`http://localhost:5000/api/plants/${id}`)
-            .then(response => setCurrentPlant(response.data))
-            .catch(err => console.log(err))
-        }
+        const fetchPlant = async () => {
+            try {
+              const response = await axios.get(`http://localhost:5000/api/plants/${id}`);
+              setCurrentPlant(response.data);
+              setLoading(false);
+            } catch (err) {
+              console.log(err);
+            }
+          };
+      
+          fetchPlant();
     }, [id])
 
     const handleDelete = () => {
@@ -38,25 +45,25 @@ function PlantDetails() {
         navigate(-1);
     }
 
-    if (!id) {
-        return <div>Loading...</div>
+    if (loading) {
+        return <div>Loading...</div>;
     }
 
     return (
         <div className='PlantDetails'>
+            <div className='Container'>
+                <Header />
+                <h1>{currentPlant.name}</h1>
+                <p>{currentPlant.description}</p>
 
-            <Header />
+                <Link to={`/plants/${id}/update`} state={{ plant: currentPlant }}>
+                    <button className="Card-btn">Update <AiOutlineReload /></button>
+                </Link>
+                <button className="Card-btn" onClick={handleDelete}>Delete <AiFillDelete /></button><br />
 
-            <h1>{currentPlant.name}</h1>
-            <p>{currentPlant.description}</p>
-
-            <Link to={`/plants/${id}/update`} state={{ plant: currentPlant }}>
-                <button className="Card-btn">Update</button>
-            </Link>
-            <button className="Card-btn" onClick={handleDelete}>Delete</button><br />
-
-            <button className="Card-btn" onClick={goBack}>Back</button>	
+                <button className="Card-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
         
+            </div>
         </div>
     )
 

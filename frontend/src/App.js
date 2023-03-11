@@ -4,12 +4,15 @@ import Dashboard from './components/Dashboard';
 import NewPlantForm from './components/NewPlantForm';
 import PlantDetails from './components/PlantDetails';
 import UpdatePlantForm from './components/UpdatePlantForm';
+import Home from './components/Home';
 
 function App() {
 
   return (
     <div className="App">
+      <div className='App-background'></div>
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='/plants' element={<Dashboard />} />
           <Route path='/new-plant' element={<NewPlantForm />} />
           <Route path="/plants/:id" element={<PlantDetails />} />
