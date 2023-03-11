@@ -33,7 +33,7 @@ function NewPlantForm() {
       });
   
       console.log(response.data);
-      navigate('/');
+      navigate('/plants');
       
     } catch (err) {
       console.log(err);

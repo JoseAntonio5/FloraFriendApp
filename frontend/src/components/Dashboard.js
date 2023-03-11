@@ -33,7 +33,7 @@ function Dashboard() {
           )}
         </div>
         <div className='Dashboard-button'>
-          <Link to="new-plant">
+          <Link to="/new-plant">
             <button className="Dashboard-new-btn">New Plant</button>
           </Link>
         </div>

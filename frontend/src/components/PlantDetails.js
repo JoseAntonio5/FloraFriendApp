@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Header from './Header';
 
 function PlantDetails() {
 
     const navigate = useNavigate();
-    const location = useLocation()
+    const location = useLocation();
     const id = location.state?.plantID;
     const [currentPlant, setCurrentPlant] = useState({})
 
@@ -28,7 +28,7 @@ function PlantDetails() {
             .delete(`http://localhost:5000/api/plants/${id}`)
             .then(() => {
                 // Redirect to the dashboard after deleting the plant
-                navigate('/');
+                navigate('/plants');
             })
             .catch(err => console.log(err));
         }
@@ -50,7 +50,9 @@ function PlantDetails() {
             <h1>{currentPlant.name}</h1>
             <p>{currentPlant.description}</p>
 
-            <button className="Card-btn">Update</button><br />
+            <Link to={`/plants/${id}/update`} state={{ plant: currentPlant }}>
+                <button className="Card-btn">Update</button>
+            </Link>
             <button className="Card-btn" onClick={handleDelete}>Delete</button><br />
 
             <button className="Card-btn" onClick={goBack}>Back</button>	
