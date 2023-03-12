@@ -24,7 +24,7 @@ function NewPlantForm() {
     setDescription(e.target.value);
   }
 
-  const handleImageUrl = (e) => {
+  const handleImageUrlChange = (e) => {
     setImageUrl(e.target.value);
   }
 
@@ -93,7 +93,7 @@ function NewPlantForm() {
               <textarea value={description} onChange={handleDescriptionChange}></textarea>
 
               <label>Image URL:</label>
-              <input type="text" value={imageUrl} onChange={handleImageUrl} />
+              <input type="text" value={imageUrl} onChange={handleImageUrlChange} />
 
               <label>Species:</label>
               <input type="text" value={species} onChange={handleSpeciesChange} />

@@ -12,6 +12,11 @@ function UpdatePlantForm(props) {
     const plantToUpdate = location.state?.plant;
     const [updatedName, setUpdatedName] = useState(plantToUpdate.name);
     const [updatedDescription, setUpdatedDescription] = useState(plantToUpdate.description);
+    const [updatedImageUrl, setUpdatedImageUrl] = useState(plantToUpdate.image_url);
+    const [updatedSpecies, setUpdatedSpecies] = useState(plantToUpdate.species);
+    const [updatedAge, setUpdatedAge] = useState(plantToUpdate.age);
+    const [updatedLastWatered, setUpdatedLastWatered] = useState(plantToUpdate.last_watered);
+    const [updatedWateringFrequency, setUpdatedWateringFrequency] = useState(plantToUpdate.watering_frequency);
   
     const handleNameChange = (e) => {
         setUpdatedName(e.target.value);
@@ -21,9 +26,25 @@ function UpdatePlantForm(props) {
         setUpdatedDescription(e.target.value);
     }
 
-    const goBack = () => {
-        navigate(-1);
-    }
+    const handleImageUrlChange = (e) => {
+        setUpdatedImageUrl(e.target.value);
+      }
+    
+      const handleSpeciesChange = (e) => {
+        setUpdatedSpecies(e.target.value);
+      }
+    
+      const handleAgeChange = (e) => {
+        setUpdatedAge(e.target.value);
+      }
+    
+      const handleLastWateredChange = (e) => {
+        setUpdatedLastWatered(e.target.value);
+      }
+    
+      const handleWateringFrequencyChange = (e) => {
+        setUpdatedWateringFrequency(e.target.value);
+      }
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -32,6 +53,11 @@ function UpdatePlantForm(props) {
             const response = await axios.put(`http://localhost:5000/api/plants/${plantToUpdate.id}`, {
                 name: updatedName,
                 description: updatedDescription,
+                image_url: updatedImageUrl,
+                species: updatedSpecies,
+                age: updatedAge,
+                last_watered: updatedLastWatered,
+                watering_frequency: updatedWateringFrequency,
             });
         
             console.log(response.data);
@@ -41,6 +67,10 @@ function UpdatePlantForm(props) {
             console.log(err);
             alert('Failed to update plant');
           }
+    }
+
+    const goBack = () => {
+        navigate(-1);
     }
 
     return (
@@ -57,6 +87,21 @@ function UpdatePlantForm(props) {
 
                         <label>Description:</label>
                         <textarea value={updatedDescription} onChange={handleDescriptionChange}></textarea>
+
+                        <label>Image URL:</label>
+                        <input type="text" value={updatedImageUrl} onChange={handleImageUrlChange} />
+
+                        <label>Species:</label>
+                        <input type="text" value={updatedSpecies} onChange={handleSpeciesChange} />
+
+                        <label>Age:</label>
+                        <input type="number" value={updatedAge} onChange={handleAgeChange} />
+
+                        <label>Last Watered:</label>
+                        <input type="date" value={updatedLastWatered} onChange={handleLastWateredChange} />
+
+                        <label>Watering Frequency:</label>
+                        <input type="number" value={updatedWateringFrequency} onChange={handleWateringFrequencyChange} />
 
                         <button className="Dashboard-new-btn">Submit</button>
                     </form>
