@@ -54,7 +54,11 @@ function PlantDetails() {
             <div className='Container'>
                 <Header />
                 <h1>{currentPlant.name}</h1>
-                <p>{currentPlant.description}</p>
+                <img src={currentPlant.image_url} alt={currentPlant.name} style={{width: 500}} />
+                <p>{currentPlant.species}</p>
+                <h3>{currentPlant.description}</h3>
+                <p>Plant age: {currentPlant.age} year(s)</p>
+                <h3>Last time plant was watered: {currentPlant.last_watered}</h3>
 
                 <Link to={`/plants/${id}/update`} state={{ plant: currentPlant }}>
                     <button className="Card-btn">Update <AiOutlineReload /></button>

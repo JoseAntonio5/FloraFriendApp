@@ -164,6 +164,10 @@ button.Dashboard-new-btn.Home-btn {
     object-fit: cover;
 }
 
+.Card .Card-description {
+  width: 320px;
+}
+
 .Card-btn {
     appearance: none;
     background-color: #493d2a;

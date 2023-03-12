@@ -5,13 +5,16 @@ import '../App.css'
 
 function Card(props) {
 
-    const { id, name, description } = props.plant;
+    const { id, name, description, image_url, species } = props.plant;
+
+    const shortenedDescription = description.slice(0, 100) + '...';
 
     return (
         <div className='Card'>
-            <img src='https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt='plant' />
+            <img src={image_url} alt={name} />
             <h3>{name}</h3>
-            <p>{description}</p>
+            <p><i>{species}</i></p>
+            <p className='Card-description'>{shortenedDescription}</p>
 
             <Link to={`/plants/${id}`} state={{ plantID: id }}>
                 <button className="Card-btn">More <AiOutlinePlus /></button>
