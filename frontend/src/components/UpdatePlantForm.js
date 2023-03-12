@@ -45,21 +45,25 @@ function UpdatePlantForm(props) {
 
     return (
         <div className='NewPlantForm'>
-            <Header />
-            <h1>Update plant info</h1>
+            <div className='Container'>
+                <Header />
+                <div className='NewPlantForm-content'>
+                    <h1>Update plant info</h1>
 
-            <div className='NewPlantForm-form'>
-            <form onSubmit={handleSubmit}>
-                <label>Name:</label>
-                <input type="text" value={updatedName} onChange={handleNameChange} />
+                    <div className='NewPlantForm-form'>
+                    <form onSubmit={handleSubmit}>
+                        <label>Name:</label>
+                        <input type="text" value={updatedName} onChange={handleNameChange} />
 
-                <label>Description:</label>
-                <textarea value={updatedDescription} onChange={handleDescriptionChange}></textarea>
+                        <label>Description:</label>
+                        <textarea value={updatedDescription} onChange={handleDescriptionChange}></textarea>
 
-                <button className="Card-btn">Submit</button>
-            </form>
+                        <button className="Dashboard-new-btn">Submit</button>
+                    </form>
+                    </div>
+                    <button className="Dashboard-new-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
+                </div>
             </div>
-            <button className="Card-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
         </div>
     )
 }

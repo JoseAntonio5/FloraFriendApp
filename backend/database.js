@@ -11,9 +11,14 @@ const db = new sqlite3.Database(DBSOURCE, (err) => {
       console.log('Connected to the database.');
       // Create the "plants" table if it doesn't exist
       db.run(`CREATE TABLE IF NOT EXISTS plants (
-              id INTEGER PRIMARY KEY AUTOINCREMENT,
-              name TEXT NOT NULL,
-              description TEXT
+          id INTEGER PRIMARY KEY AUTOINCREMENT,
+          name TEXT NOT NULL,
+          description TEXT,
+          image_url TEXT,
+          species TEXT,
+          age INTEGER,
+          last_watered DATE,
+          watering_frequency INTEGER
               )`,
       (err) => {
         if (err) {

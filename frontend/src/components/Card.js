@@ -14,7 +14,7 @@ function Card(props) {
             <p>{description}</p>
 
             <Link to={`/plants/${id}`} state={{ plantID: id }}>
-                <button className="Card-btn">More <AiOutlinePlus /> </button>
+                <button className="Card-btn">More <AiOutlinePlus /></button>
             </Link>
         </div>
     )

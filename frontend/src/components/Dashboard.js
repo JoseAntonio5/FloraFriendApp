@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import { AiOutlinePlus } from "react-icons/ai";
 import axios from 'axios';
 import Header from './Header'
 import Card from './Card';
@@ -35,7 +36,7 @@ function Dashboard() {
           </div>
           <div className='Dashboard-button'>
             <Link to="/new-plant">
-              <button className="Dashboard-new-btn Dashboard-btn">New Plant</button>
+              <button className="Dashboard-new-btn Dashboard-btn">New Plant <AiOutlinePlus /></button>
             </Link>
           </div>
         </div>
