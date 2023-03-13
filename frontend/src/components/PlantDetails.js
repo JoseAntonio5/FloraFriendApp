@@ -53,19 +53,26 @@ function PlantDetails() {
         <div className='PlantDetails'>
             <div className='Container'>
                 <Header />
-                <h1>{currentPlant.name}</h1>
-                <img src={currentPlant.image_url} alt={currentPlant.name} style={{width: 500}} />
-                <p>{currentPlant.species}</p>
-                <h3>{currentPlant.description}</h3>
-                <p>Plant age: {currentPlant.age} year(s)</p>
-                <h3>Last time plant was watered: {currentPlant.last_watered}</h3>
+
+                <div className='PlantDetails-content'>
+                    <div className='PlantDetails-left'>
+                        <img src={currentPlant.image_url} alt={currentPlant.name} />
+                    </div>
+                    <div className='PlantDetails-right'>
+                        <h1>{currentPlant.name}</h1>
+                        <p className='PlantDetails-species'>{currentPlant.species}</p>
+                        <h3 className='PlantDetails-description'>{currentPlant.description}</h3>
+                        <p className='PlantDetails-age'><b>Plant age:</b> {currentPlant.age} year(s)</p>
+                        <h3>Last time plant was watered: {currentPlant.last_watered}</h3>
+                    </div>
+                </div>
 
                 <Link to={`/plants/${id}/update`} state={{ plant: currentPlant }}>
-                    <button className="Card-btn">Update <AiOutlineReload /></button>
+                    <button className="Card-btn Update-btn">Update <AiOutlineReload /></button>
                 </Link>
-                <button className="Card-btn" onClick={handleDelete}>Delete <AiFillDelete /></button><br />
+                <button className="Card-btn Delete-btn" onClick={handleDelete}>Delete <AiFillDelete /></button><br />
 
-                <button className="Card-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
+                <button className="Card-btn Details-back-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
         
             </div>
         </div>

@@ -226,12 +226,85 @@ button.Dashboard-new-btn.Home-btn {
     color: #fff;
 }
 
-.PlantDetails > h1 {
-    font-size: 4rem;
+.PlantDetails-right h1 {
+    font-size: 6rem;
 }
 
 .PlantDetails > p {
     margin: 60px;
+}
+
+.PlantDetails-content {
+  margin: 40px 0;
+  background-color: rgba(73, 61, 42, 0.75);
+  border-radius: 40px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 600px;
+}
+
+.PlantDetails-left img {
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+
+.PlantDetails-left img:hover {
+  scale: 1.05;
+}
+
+.PlantDetails-species {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.PlantDetails-description {
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.PlantDetails-age {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.Delete-btn {
+  background-color: #b52727;
+  transition: all 0.4s;
+  font-size: 2rem;
+  padding-bottom: 10px;
+  box-shadow: 0 0 16px #000;
+}
+
+.Delete-btn:hover {
+  background-color: #931515;
+}
+
+.Update-btn {
+  margin-right: 16px;
+  background-color: #05685e;
+  transition: all 0.4s;
+  font-size: 2rem;
+  padding-bottom: 10px;
+  box-shadow: 0 0 16px #000;
+}
+
+.Update-btn:hover {
+  background-color: #034a42;
+}
+
+.Details-back-btn {
+  margin-top: 16px;
+  background-color: #228B22;
+  font-size: 1.8rem;
+  padding-bottom: 12px;
+  box-shadow: 0 0 16px #000;
 }
 
 /* NEW PLANT COMPONENT */
