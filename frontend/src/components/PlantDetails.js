@@ -11,6 +11,7 @@ function PlantDetails() {
     const id = location.state?.plantID;
     const [currentPlant, setCurrentPlant] = useState({})
     const [loading, setLoading] = useState(true);
+    const [lastWateredDate, setLastWateredDate] = useState(new Date());
 
     useEffect(() => {
         const fetchPlant = async () => {
@@ -25,6 +26,25 @@ function PlantDetails() {
       
           fetchPlant();
     }, [id])
+
+    const handleWatering = async () => {
+        try {
+          const response = await axios.put(`http://localhost:5000/api/plants/${id}`, {
+            name: currentPlant.name,
+            description: currentPlant.description,
+            image_url: currentPlant.image_url,
+            species: currentPlant.species,
+            age: currentPlant.age,
+            last_watered: new Date().toISOString().slice(0,10),
+            watering_frequency: currentPlant.watering_frequency,
+          });
+          setCurrentPlant(response.data);
+          setLastWateredDate(new Date());
+          window.location.reload();
+        } catch (err) {
+          console.log(err);
+        }
+    };
 
     const handleDelete = () => {
 
@@ -64,6 +84,7 @@ function PlantDetails() {
                         <h3 className='PlantDetails-description'>{currentPlant.description}</h3>
                         <p className='PlantDetails-age'><b>Plant age:</b> {currentPlant.age} year(s)</p>
                         <h3>Last time plant was watered: {currentPlant.last_watered}</h3>
+                        <button onClick={handleWatering}>Water Plant</button>
                     </div>
                 </div>
 
