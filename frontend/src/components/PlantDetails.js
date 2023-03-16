@@ -40,11 +40,46 @@ function PlantDetails() {
           });
           setCurrentPlant(response.data);
           setLastWateredDate(new Date());
-          window.location.reload();
         } catch (err) {
           console.log(err);
         }
     };
+
+    const handleWateringFrequency = async () => {
+
+        try {
+            await handleWatering();
+
+            const nextWateringDate = new Date();
+            nextWateringDate.setDate(nextWateringDate.getDate() + currentPlant.watering_frequency);
+        
+            console.log(nextWateringDate);
+
+            // page will only reload once the user granted or denied the notification permission
+            await Notification.requestPermission().then(permission => {
+                if (permission === 'granted') {
+                    // Creates a new notification
+                    const notification = new Notification(`Water ${currentPlant.name} on ${nextWateringDate.toLocaleDateString()}`, {
+                        body: `FloraFriend: Time to water your ${currentPlant.name}!`,
+                        icon: currentPlant.image_url,
+                        requireInteraction: true,
+                    });
+        
+                    // Open FloraFriend when user clicks the notification
+                    notification.onclick = () => {
+                        window.focus();
+                    };
+                }
+            });
+            setLastWateredDate(new Date());
+
+            window.location.reload();
+        } catch(err) {
+            console.log(err);
+        }
+
+    };
+    
 
     const handleDelete = () => {
 
@@ -84,7 +119,7 @@ function PlantDetails() {
                         <h3 className='PlantDetails-description'>{currentPlant.description}</h3>
                         <p className='PlantDetails-age'><b>Plant age:</b> {currentPlant.age} year(s)</p>
                         <h3>Last time plant was watered: {currentPlant.last_watered}</h3>
-                        <button onClick={handleWatering}>Water Plant</button>
+                        <button onClick={handleWateringFrequency}>Water Plant</button>
                     </div>
                 </div>
 
