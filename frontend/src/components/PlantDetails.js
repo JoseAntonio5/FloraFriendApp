@@ -69,11 +69,14 @@ function PlantDetails() {
                     notification.onclick = () => {
                         window.focus();
                     };
+
+                    window.location.reload();
+                } else {
+                    console.log('denied notifications');
+                    window.location.reload();
                 }
             });
             setLastWateredDate(new Date());
-
-            window.location.reload();
         } catch(err) {
             console.log(err);
         }
@@ -119,7 +122,7 @@ function PlantDetails() {
                         <h3 className='PlantDetails-description'>{currentPlant.description}</h3>
                         <p className='PlantDetails-age'><b>Plant age:</b> {currentPlant.age} year(s)</p>
                         <h3>Last time plant was watered: {currentPlant.last_watered}</h3>
-                        <button onClick={handleWateringFrequency}>Water Plant</button>
+                        <button className='PlantDetails-notification-btn' onClick={handleWateringFrequency}>Water Plant</button>
                     </div>
                 </div>
 
