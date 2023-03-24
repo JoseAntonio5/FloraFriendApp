@@ -267,6 +267,7 @@ button.Dashboard-new-btn.Home-btn {
 .PlantDetails-description {
   font-weight: 400;
   margin: 10px 0;
+  padding: 0 100px;
 }
 
 .PlantDetails-age {
@@ -300,7 +301,8 @@ button.Dashboard-new-btn.Home-btn {
 }
 
 .Details-back-btn {
-  margin-top: 16px;
+  display: block;
+  margin: 16px auto 0 auto;
   background-color: #228B22;
   font-size: 1.8rem;
   padding-bottom: 12px;
@@ -403,16 +405,18 @@ button.Dashboard-new-btn.Home-btn {
 
 /* MEDIA QUERIES */
 
-@media (orientation: landscape) {
-  button.Dashboard-new-btn.Home-btn {
-    margin: 20px 0;
-    font-size: 2rem !important;
-  }
-}
-
 @media (max-width: 1440px) {
   .Dashboard-content {
     grid-gap: 5rem;
+  }
+
+  .PlantDetails-left img {
+    max-width: 420px;
+    max-height: 420px;
+  }
+
+  .PlantDetails-content h1 {
+    font-size: 4rem;
   }
 }
 
@@ -433,6 +437,11 @@ button.Dashboard-new-btn.Home-btn {
     font-size: 6rem;
   }
 
+  .PlantDetails-left img {
+    max-width: 320px;
+    max-height: 320px;
+  }
+
 }
 
 @media (max-width: 824px) {
@@ -445,6 +454,11 @@ button.Dashboard-new-btn.Home-btn {
 
   .About-container-img img {
       margin: 0;
+  }
+
+  .PlantDetails-content {
+    max-width: 800px;
+    flex-direction: column;
   }
 }
 
@@ -485,6 +499,37 @@ button.Dashboard-new-btn.Home-btn {
   .Card-description {
     font-size: 0.8rem !important;
     padding: 0 20px;
+  }
+
+  .PlantDetails-content {
+    max-width: 400px;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 10px 0;
+  }
+
+  .PlantDetails-content h1 {
+    font-size: 3rem;
+  }
+
+  .PlantDetails-left img {
+    max-width: 320px;
+    max-height: 320px;
+  }
+
+  .PlantDetails-description {
+    padding: 0 20px;
+  }
+
+  .PlantDetails-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Update-btn, .Delete-btn, .Details-back-btn {
+    margin-top: 10px;
   }
 
 }

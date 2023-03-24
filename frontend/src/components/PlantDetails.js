@@ -126,12 +126,13 @@ function PlantDetails() {
                     </div>
                 </div>
 
-                <Link to={`/plants/${id}/update`} state={{ plant: currentPlant }}>
-                    <button className="Card-btn Update-btn">Update <AiOutlineReload /></button>
-                </Link>
-                <button className="Card-btn Delete-btn" onClick={handleDelete}>Delete <AiFillDelete /></button><br />
-
-                <button className="Card-btn Details-back-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
+                <div className='PlantDetails-buttons'>
+                    <Link to={`/plants/${id}/update`} state={{ plant: currentPlant }}>
+                        <button className="Card-btn Update-btn">Update <AiOutlineReload /></button>
+                    </Link>
+                    <button className="Card-btn Delete-btn" onClick={handleDelete}>Delete <AiFillDelete /></button>
+                    <button className="Card-btn Details-back-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
+                </div>
         
             </div>
         </div>
