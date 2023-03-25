@@ -532,6 +532,10 @@ button.Dashboard-new-btn.Home-btn {
     margin-top: 10px;
   }
 
+  .NewPlantForm-form > form {
+    width: 340px;
+  }
+
 }
 
 @media (max-width:480px) {
@@ -541,6 +545,10 @@ button.Dashboard-new-btn.Home-btn {
 
   .About h1 {
       font-size: 2.5rem;
+  }
+
+  .NewPlantForm-form > form {
+    width: 300px;
   }
 
 }
