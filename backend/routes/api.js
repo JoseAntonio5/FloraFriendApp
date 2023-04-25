@@ -29,8 +29,8 @@ router.get('/plants/:id', (req, res) => {
 
 // add a new plant
 router.post('/plants', (req, res) => {
-  const { name, description, image_url, species, age, last_watered, watering_frequency } = req.body;
-  db.run('INSERT INTO plants (name, description, image_url, species, age, last_watered, watering_frequency) VALUES (?, ?, ?, ?, ?, ?, ?)', [name, description, image_url, species, age, last_watered, watering_frequency], (err) => {
+  const { name, description, image_url, category, species, age, last_watered, watering_frequency } = req.body;
+  db.run('INSERT INTO plants (name, description, image_url, category, species, age, last_watered, watering_frequency) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [name, description, image_url, category, species, age, last_watered, watering_frequency], (err) => {
     if(err) {
       console.log(err);
       res.status(500).send('Error inserting plant');
@@ -43,9 +43,9 @@ router.post('/plants', (req, res) => {
 
 // update a plant
 router.put('/plants/:id', (req, res) => {
-  const { name, description, image_url, species, age, last_watered, watering_frequency } = req.body;
-  db.run('UPDATE plants SET name = ?, description = ?, image_url = ?, species = ?, age = ?, last_watered = ?, watering_frequency = ? WHERE id = ?', 
-         [name, description, image_url, species, age, last_watered, watering_frequency, req.params.id], 
+  const { name, description, image_url, category, species, age, last_watered, watering_frequency } = req.body;
+  db.run('UPDATE plants SET name = ?, description = ?, image_url = ?, category=?, species = ?, age = ?, last_watered = ?, watering_frequency = ? WHERE id = ?', 
+         [name, description, image_url, category, species, age, last_watered, watering_frequency, req.params.id], 
          (err) => {
            if(err) {
              console.log(err);

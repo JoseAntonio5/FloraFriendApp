@@ -15,6 +15,7 @@ const db = new sqlite3.Database(DBSOURCE, (err) => {
           name TEXT NOT NULL,
           description TEXT,
           image_url TEXT,
+          category TEXT,
           species TEXT,
           age INTEGER,
           last_watered DATE,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import axios from 'axios'
 import { AiOutlineArrowLeft, AiFillDelete, AiOutlineReload } from "react-icons/ai";
+import axios from 'axios'
 import Header from './Header';
 
 function PlantDetails() {
@@ -33,6 +33,7 @@ function PlantDetails() {
             name: currentPlant.name,
             description: currentPlant.description,
             image_url: currentPlant.image_url,
+            category: currentPlant.category,
             species: currentPlant.species,
             age: currentPlant.age,
             last_watered: new Date().toISOString().slice(0,10),
@@ -119,6 +120,7 @@ function PlantDetails() {
                     <div className='PlantDetails-right'>
                         <h1>{currentPlant.name}</h1>
                         <p className='PlantDetails-species'>{currentPlant.species}</p>
+                        <p>{currentPlant.category}</p>
                         <h3 className='PlantDetails-description'>{currentPlant.description}</h3>
                         <p className='PlantDetails-age'><b>Plant age:</b> {currentPlant.age} year(s)</p>
                         <h3>Last time plant was watered: {currentPlant.last_watered}</h3>

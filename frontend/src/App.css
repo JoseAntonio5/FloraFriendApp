@@ -93,7 +93,7 @@ button.Dashboard-new-btn.Home-btn {
 }
 
 .Dashboard-new-btn {
-  margin: 10px 0;
+  margin: 1rem 0;
   appearance: none;
   backface-visibility: hidden;
   background-color: #228B22;
@@ -377,6 +377,15 @@ button.Dashboard-new-btn.Home-btn {
 
   padding-left: 5px;
   margin-bottom: 10px;
+
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.NewPlantForm-form > form > select {
+  height: 40px;
+  font-size: 24px;
 
   border: none;
   border-radius: 8px;

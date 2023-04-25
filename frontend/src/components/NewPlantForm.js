@@ -10,6 +10,7 @@ function NewPlantForm() {
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
   const [species, setSpecies] = useState('');
   const [age, setAge] = useState('');
   const [lastWatered, setLastWatered] = useState('');
@@ -26,6 +27,10 @@ function NewPlantForm() {
 
   const handleImageUrlChange = (e) => {
     setImageUrl(e.target.value);
+  }
+
+  const handleCategoryChange = (e) => {
+    setCategory(e.target.value);
   }
 
   const handleSpeciesChange = (e) => {
@@ -57,6 +62,7 @@ function NewPlantForm() {
         name,
         description,
         image_url: imageUrl,
+        category,
         species,
         age,
         last_watered: lastWatered,
@@ -94,6 +100,20 @@ function NewPlantForm() {
 
               <label>Image URL:</label>
               <input type="text" value={imageUrl} onChange={handleImageUrlChange} />
+
+              <label for="category">Category:</label>
+              <select id="category" name="category" value={category} onChange={handleCategoryChange}>
+                <option value="">Select a category</option>
+                <option value="Flowering plants">Flowering plants</option>
+                <option value="Succulents and cacti">Succulents and cacti</option>
+                <option value="Edible plants">Edible plants</option>
+                <option value="Houseplants">Houseplants</option>
+                <option value="Trees">Trees</option>
+                <option value="Shrubs">Shrubs</option>
+                <option value="Vines">Vines</option>
+                <option value="Herbs">Herbs</option>
+                <option value="Ferns">Ferns</option>
+              </select>
 
               <label>Species:</label>
               <input type="text" value={species} onChange={handleSpeciesChange} />
