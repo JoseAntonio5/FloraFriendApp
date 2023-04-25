@@ -16,4 +16,4 @@ FloraFriend is a web application that helps you keep track of your plants. You c
 - SQLite
 
 #### Author
-José Antônio ©️ 2022
+José Antônio ©️ 2023
