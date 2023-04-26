@@ -154,6 +154,13 @@ button.Dashboard-new-btn.Home-btn {
     align-items: center;
 
     box-shadow: 0px 0px 20px #02220b;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.Card:hover {
+  scale: 1.02;
+  box-shadow: 0px 0px 30px #02220b;
 }
 
 .Card > img {

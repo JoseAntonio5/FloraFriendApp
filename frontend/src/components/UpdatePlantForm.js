@@ -13,6 +13,7 @@ function UpdatePlantForm(props) {
     const [updatedName, setUpdatedName] = useState(plantToUpdate.name);
     const [updatedDescription, setUpdatedDescription] = useState(plantToUpdate.description);
     const [updatedImageUrl, setUpdatedImageUrl] = useState(plantToUpdate.image_url);
+    const [updatedCategory, setUpdatedCategory] = useState(plantToUpdate.category);
     const [updatedSpecies, setUpdatedSpecies] = useState(plantToUpdate.species);
     const [updatedAge, setUpdatedAge] = useState(plantToUpdate.age);
     const [updatedLastWatered, setUpdatedLastWatered] = useState(plantToUpdate.last_watered);
@@ -28,23 +29,27 @@ function UpdatePlantForm(props) {
 
     const handleImageUrlChange = (e) => {
         setUpdatedImageUrl(e.target.value);
-      }
+    }
+
+    const handleCategoryChange = (e) => {
+      setUpdatedCategory(e.target.value);
+    }
     
-      const handleSpeciesChange = (e) => {
-        setUpdatedSpecies(e.target.value);
-      }
+    const handleSpeciesChange = (e) => {
+      setUpdatedSpecies(e.target.value);
+    }
     
-      const handleAgeChange = (e) => {
-        setUpdatedAge(e.target.value);
-      }
+    const handleAgeChange = (e) => {
+      setUpdatedAge(e.target.value);
+    }
     
-      const handleLastWateredChange = (e) => {
-        setUpdatedLastWatered(e.target.value);
-      }
+    const handleLastWateredChange = (e) => {
+      setUpdatedLastWatered(e.target.value);
+    }
     
-      const handleWateringFrequencyChange = (e) => {
-        setUpdatedWateringFrequency(e.target.value);
-      }
+    const handleWateringFrequencyChange = (e) => {
+      setUpdatedWateringFrequency(e.target.value);
+    }
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -54,6 +59,7 @@ function UpdatePlantForm(props) {
                 name: updatedName,
                 description: updatedDescription,
                 image_url: updatedImageUrl,
+                category: updatedCategory,
                 species: updatedSpecies,
                 age: updatedAge,
                 last_watered: updatedLastWatered,
@@ -90,6 +96,20 @@ function UpdatePlantForm(props) {
 
                         <label>Image URL:</label>
                         <input type="text" value={updatedImageUrl} onChange={handleImageUrlChange} />
+
+                        <label for="category">Category:</label>
+                        <select id="category" name="category" value={updatedCategory} onChange={handleCategoryChange}>
+                          <option value="">Select a category</option>
+                          <option value="Flowering plants">Flowering plants</option>
+                          <option value="Succulents and cacti">Succulents and cacti</option>
+                          <option value="Edible plants">Edible plants</option>
+                          <option value="Houseplants">Houseplants</option>
+                          <option value="Trees">Trees</option>
+                          <option value="Shrubs">Shrubs</option>
+                          <option value="Vines">Vines</option>
+                          <option value="Herbs">Herbs</option>
+                          <option value="Ferns">Ferns</option>
+                        </select>
 
                         <label>Species:</label>
                         <input type="text" value={updatedSpecies} onChange={handleSpeciesChange} />
