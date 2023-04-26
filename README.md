@@ -30,7 +30,8 @@ FloraFriend is a web application that helps you keep track of your plants. You c
 4. Run `node index.js` from the backend folder
 
 5. (Optional) Run the file seedDB.js to seed the database with some data.
-    You can do this by running `node seedDB.js`
+    You can do this by running 
+    `node seedDB.js`
 
 6. In another terminal cd into `FloraFriend\frontend`
 
