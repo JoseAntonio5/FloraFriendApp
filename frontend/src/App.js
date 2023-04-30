@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard';
 import NewPlantForm from './components/NewPlantForm';
 import PlantDetails from './components/PlantDetails';
 import UpdatePlantForm from './components/UpdatePlantForm';
+import About from './components/About';
 import Home from './components/Home';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/new-plant' element={<NewPlantForm />} />
           <Route path="/plants/:id" element={<PlantDetails />} />
           <Route path="/plants/:id/update" element={<UpdatePlantForm />} />
+          <Route path="/about" element={<About />} />
         </Routes>
     </div>
   );

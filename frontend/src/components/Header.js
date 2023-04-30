@@ -15,6 +15,9 @@ function Header() {
           <Link to="/plants">
               <button className="Dashboard-new-btn">All Plants</button>
           </Link>
+          <Link to="/about">
+              <button className="Dashboard-new-btn">About</button>
+          </Link>
         </div>
     </div>
   )

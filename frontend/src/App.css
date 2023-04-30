@@ -107,7 +107,7 @@ button.Dashboard-new-btn.Home-btn {
   background-color: #228B22;
   border-radius: 8px;
   border-style: none;
-  box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+  box-shadow: 0 0 8px #000;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
@@ -420,6 +420,24 @@ button.Dashboard-new-btn.Home-btn {
   border: none;
   border-radius: 8px;
   outline: none;
+}
+
+/* ABOUT PAGE */
+
+.About-content {
+  width: 60%;
+  margin: 5rem auto 0 auto;
+  color: #fff;
+  text-align: center;
+}
+
+.About-content > h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.About-content > p {
+  font-size: 1.5rem;
 }
 
 /* FOOTER COMPONENT */
