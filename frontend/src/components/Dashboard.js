@@ -22,6 +22,20 @@ function Dashboard() {
     <div className='Dashboard'>
       <div className='Container'>
         <Header />
+          <div className='Dashboard-filter'>
+            <select id="category" name="category">
+              <option value="Flowering plants">All</option>
+              <option value="Flowering plants">Flowering plants</option>
+              <option value="Succulents and cacti">Succulents and cacti</option>
+              <option value="Edible plants">Edible plants</option>
+              <option value="Houseplants">Houseplants</option>
+              <option value="Trees">Trees</option>
+              <option value="Shrubs">Shrubs</option>
+              <option value="Vines">Vines</option>
+              <option value="Herbs">Herbs</option>
+              <option value="Ferns">Ferns</option>
+            </select>
+          </div>
           <div className='Dashboard-content'>
             {plants && plants.length > 0 ? (
               plants.map((plant) => (

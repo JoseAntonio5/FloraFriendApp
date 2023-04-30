@@ -103,7 +103,7 @@ function NewPlantForm() {
 
               <label for="category">Category:</label>
               <select id="category" name="category" value={category} onChange={handleCategoryChange}>
-                <option value="">Select a category</option>
+                <option value="" disabled>Select a category</option>
                 <option value="Flowering plants">Flowering plants</option>
                 <option value="Succulents and cacti">Succulents and cacti</option>
                 <option value="Edible plants">Edible plants</option>

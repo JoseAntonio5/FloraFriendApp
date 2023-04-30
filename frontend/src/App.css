@@ -145,6 +145,21 @@ button.Dashboard-new-btn.Home-btn {
   transition-duration: .35s;
 }
 
+.Dashboard-filter > select {
+  height: 3rem;
+  width: 20rem;
+  margin: 0.6rem 0;
+  background-color: rgba(54, 35, 16, 0.78);
+
+  font-size: 1.8rem;
+  color: #fff;
+  padding-left: 0.5rem;
+
+  border-radius: 15px;
+
+  cursor: pointer;
+}
+
 /* CARD COMPONENT */
 
 .Card {
@@ -573,6 +588,10 @@ button.Dashboard-new-btn.Home-btn {
 
   .NewPlantForm-form > form {
     width: 300px;
+  }
+
+  .Container > .Dashboard-filter {
+    text-align: center;
   }
 
 }
