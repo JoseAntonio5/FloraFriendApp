@@ -10,21 +10,29 @@ import '../App.css'
 function Dashboard() {
 
   const [plants, setPlants] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/plants/')
-      .then(response => setPlants(response.data))
+      .then((response) => {
+        selectedCategory === "All"
+          ? setPlants(response.data)
+          : setPlants(response.data.filter((p) => p.category === selectedCategory));
+      })
       .catch(err => console.log(err));
+  }, [selectedCategory]);
 
-  }, []);
+  const handleSelectedCategory = (e) => {
+    setSelectedCategory(e.target.value);
+  }
 
   return (
     <div className='Dashboard'>
       <div className='Container'>
         <Header />
           <div className='Dashboard-filter'>
-            <select id="category" name="category">
-              <option value="Flowering plants">All</option>
+            <select id="category" name="category" onChange={handleSelectedCategory}>
+              <option value="All">All</option>
               <option value="Flowering plants">Flowering plants</option>
               <option value="Succulents and cacti">Succulents and cacti</option>
               <option value="Edible plants">Edible plants</option>
@@ -37,13 +45,8 @@ function Dashboard() {
             </select>
           </div>
           <div className='Dashboard-content'>
-            {plants && plants.length > 0 ? (
-              plants.map((plant) => (
-                <Card 
-                  plant={plant}
-                  key={plant.id}
-                />
-              ))
+          {plants && plants.length > 0 ? (
+              plants.map((plant) => <Card plant={plant} key={plant.id} />)
             ) : (
               <p>No plants found</p>
             )}
