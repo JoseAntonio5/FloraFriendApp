@@ -529,6 +529,18 @@ button.Dashboard-new-btn.Home-btn {
     max-width: 800px;
     flex-direction: column;
   }
+
+  .About-content {
+    margin: 1rem auto;
+  }
+
+  .About-content > h1 {
+    font-size: 3rem;
+  }
+
+  .About-content > .About-content-paragraph > p {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 542px) {
@@ -603,6 +615,10 @@ button.Dashboard-new-btn.Home-btn {
 
   .NewPlantForm-form > form {
     width: 340px;
+  }
+
+  .About-content {
+    padding: 1rem;
   }
 
 }
