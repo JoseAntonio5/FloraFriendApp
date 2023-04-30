@@ -14,7 +14,12 @@ function Card(props) {
             <img src={image_url} alt={name} />
             <h3>{name}</h3>
             <p><i>{species}</i></p>
-            <p className='Card-description'>{shortenedDescription}</p>
+
+            <p className='Card-description'>
+                {
+                    description.length > 100 ? shortenedDescription : description
+                }
+            </p>
 
             <Link to={`/plants/${id}`} state={{ plantID: id }}>
                 <button className="Card-btn">More <AiOutlinePlus /></button>
