@@ -45,6 +45,14 @@ body {
   margin-right: 10px;
 }
 
+#Header-text-link {
+  text-decoration: none;
+}
+
+#Header-text-link:visited {
+  color: #fff;
+}
+
 /* HOME COMPONENT */
 
 .Home {

@@ -41,5 +41,9 @@ FloraFriend is a web application that helps you keep track of your plants. You c
 
 The server will be running on `http://localhost:3000/`
 
+### Screenshots
+
+> screenshots will be here
+
 #### Author
 José Antônio ©️ 2023

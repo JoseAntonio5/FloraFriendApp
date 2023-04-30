@@ -5,7 +5,9 @@ import '../App.css'
 function Header() {
   return (
     <div className='Header'>
-        <h1>FloraFriend</h1>
+        <Link id="Header-text-link" to="/">
+          <h1>FloraFriend</h1>
+        </Link>
         <div className='Header-buttons'>
           <Link to="/">
               <button className="Dashboard-new-btn">Home</button>
