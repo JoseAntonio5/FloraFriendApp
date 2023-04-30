@@ -429,15 +429,27 @@ button.Dashboard-new-btn.Home-btn {
   margin: 5rem auto 0 auto;
   color: #fff;
   text-align: center;
+  background-color: rgba(37, 63, 40, 0.6);
+  padding: 5rem;
+  border-radius: 1rem;
 }
 
 .About-content > h1 {
   font-size: 4rem;
   margin-bottom: 1rem;
+  text-shadow: 0 0 5px #000;
+
+  border-bottom: 2px solid #fff;
+}
+
+.About-content > .About-content-paragraph > p {
+  text-align: justify;
+  font-size: 1.5rem;
+  margin: 1rem 0;
 }
 
 .About-content > p {
-  font-size: 1.5rem;
+  text-align: left;
 }
 
 /* FOOTER COMPONENT */
