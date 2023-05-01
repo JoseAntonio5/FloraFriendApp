@@ -15,7 +15,12 @@ function About() {
             <div className='Container'>
                 <Header />
 
-                <div className='About-content'>
+                <motion.div 
+                    className='About-content'
+
+                    initial={{scale: 0}}
+                    animate={{scale: 1}}
+                >
                     <h1>About Us</h1>
                         <div className='About-content-paragraph'>
                             <p>Welcome to FloraFriend! We are a web application that helps you keep track of your plants. You can add your plants, edit, and delete plants, as well as see all of your plants at once.</p>
@@ -27,7 +32,7 @@ function About() {
                             <p>Join FloraFriend today and start enjoying all the benefits of having happy, healthy plants in your life!</p>
                         </div>
                     <p><small>v1.0</small></p>
-                </div>
+                </motion.div>
             </div>
         </motion.div>
     </AnimatePresence>
