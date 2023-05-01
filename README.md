@@ -10,10 +10,12 @@ FloraFriend is a web application that helps you keep track of your plants. You c
 - Edit an existing plant
 - Delete a plant
 - View all plants at once
+- Animations on page change
 - Filter plants by category
 
 ## Built with 🛠️
 - React
+- Framer Motion
 - Node.js
 - Express
 - SQLite
