@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios'
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import Header from './Header'
@@ -83,57 +84,65 @@ function NewPlantForm() {
   }
 
   return (
-    <div className='NewPlantForm'>
-      <div className='Container'>
-        <Header />
-        <div className='NewPlantForm-content'>
-          <h1>Add a new plant</h1>
+    <AnimatePresence>
+      <motion.div 
+        className='NewPlantForm'
 
-          <div className='NewPlantForm-form'>
-            <form onSubmit={handleSubmit}>
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+      >
+        <div className='Container'>
+          <Header />
+          <div className='NewPlantForm-content'>
+            <h1>Add a new plant</h1>
 
-              <label>Name:</label>
-              <input type="text" value={name} onChange={handleNameChange} />
+            <div className='NewPlantForm-form'>
+              <form onSubmit={handleSubmit}>
 
-              <label>Description:</label>
-              <textarea value={description} onChange={handleDescriptionChange}></textarea>
+                <label>Name:</label>
+                <input type="text" value={name} onChange={handleNameChange} />
 
-              <label>Image URL:</label>
-              <input type="text" value={imageUrl} onChange={handleImageUrlChange} />
+                <label>Description:</label>
+                <textarea value={description} onChange={handleDescriptionChange}></textarea>
 
-              <label for="category">Category:</label>
-              <select id="category" name="category" value={category} onChange={handleCategoryChange}>
-                <option value="" disabled>Select a category</option>
-                <option value="Flowering plants">Flowering plants</option>
-                <option value="Succulents and cacti">Succulents and cacti</option>
-                <option value="Edible plants">Edible plants</option>
-                <option value="Houseplants">Houseplants</option>
-                <option value="Trees">Trees</option>
-                <option value="Shrubs">Shrubs</option>
-                <option value="Vines">Vines</option>
-                <option value="Herbs">Herbs</option>
-                <option value="Ferns">Ferns</option>
-              </select>
+                <label>Image URL:</label>
+                <input type="text" value={imageUrl} onChange={handleImageUrlChange} />
 
-              <label>Species:</label>
-              <input type="text" value={species} onChange={handleSpeciesChange} />
+                <label for="category">Category:</label>
+                <select id="category" name="category" value={category} onChange={handleCategoryChange}>
+                  <option value="" disabled>Select a category</option>
+                  <option value="Flowering plants">Flowering plants</option>
+                  <option value="Succulents and cacti">Succulents and cacti</option>
+                  <option value="Edible plants">Edible plants</option>
+                  <option value="Houseplants">Houseplants</option>
+                  <option value="Trees">Trees</option>
+                  <option value="Shrubs">Shrubs</option>
+                  <option value="Vines">Vines</option>
+                  <option value="Herbs">Herbs</option>
+                  <option value="Ferns">Ferns</option>
+                </select>
 
-              <label>Age:</label>
-              <input type="number" value={age} onChange={handleAgeChange} />
+                <label>Species:</label>
+                <input type="text" value={species} onChange={handleSpeciesChange} />
 
-              <label>Last Watered:</label>
-              <input type="date" value={lastWatered} onChange={handleLastWateredChange} />
+                <label>Age:</label>
+                <input type="number" value={age} onChange={handleAgeChange} />
 
-              <label>Watering Frequency:</label>
-              <input type="number" value={wateringFrequency} onChange={handleWateringFrequencyChange} />
+                <label>Last Watered:</label>
+                <input type="date" value={lastWatered} onChange={handleLastWateredChange} />
 
-              <button className='Dashboard-new-btn'>Submit</button>
-            </form>
+                <label>Watering Frequency:</label>
+                <input type="number" value={wateringFrequency} onChange={handleWateringFrequencyChange} />
+
+                <button className='Dashboard-new-btn'>Submit</button>
+              </form>
+            </div>
+            <button className="Dashboard-new-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
           </div>
-          <button className="Dashboard-new-btn" onClick={goBack}><AiOutlineArrowLeft /> Back</button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </AnimatePresence>
   )
 }
 

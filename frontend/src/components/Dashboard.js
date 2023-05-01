@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from "react-router-dom";
 import { AiOutlinePlus } from "react-icons/ai";
 import axios from 'axios';
@@ -27,37 +28,50 @@ function Dashboard() {
   }
 
   return (
-    <div className='Dashboard'>
-      <div className='Container'>
-        <Header />
-          <div className='Dashboard-filter'>
-            <select id="category" name="category" onChange={handleSelectedCategory}>
-              <option value="All">All</option>
-              <option value="Flowering plants">Flowering plants</option>
-              <option value="Succulents and cacti">Succulents and cacti</option>
-              <option value="Edible plants">Edible plants</option>
-              <option value="Houseplants">Houseplants</option>
-              <option value="Trees">Trees</option>
-              <option value="Shrubs">Shrubs</option>
-              <option value="Vines">Vines</option>
-              <option value="Herbs">Herbs</option>
-              <option value="Ferns">Ferns</option>
-            </select>
+    <AnimatePresence>
+      <motion.div 
+        className='Dashboard'
+
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+      >
+        <div className='Container'>
+          <Header />
+            <div className='Dashboard-filter'>
+              <select id="category" name="category" onChange={handleSelectedCategory}>
+                <option value="All">All</option>
+                <option value="Flowering plants">Flowering plants</option>
+                <option value="Succulents and cacti">Succulents and cacti</option>
+                <option value="Edible plants">Edible plants</option>
+                <option value="Houseplants">Houseplants</option>
+                <option value="Trees">Trees</option>
+                <option value="Shrubs">Shrubs</option>
+                <option value="Vines">Vines</option>
+                <option value="Herbs">Herbs</option>
+                <option value="Ferns">Ferns</option>
+              </select>
+            </div>
+            <motion.div 
+              className='Dashboard-content'
+
+              initial={{scale: 0}}
+              animate={{scale: 1}}
+            >
+            {plants && plants.length > 0 ? (
+                plants.map((plant) => <Card plant={plant} key={plant.id} />)
+              ) : (
+                <p>No plants found</p>
+              )}
+            </motion.div>
+            <div className='Dashboard-button'>
+              <Link to="/new-plant">
+                <button className="Dashboard-new-btn Dashboard-btn">New Plant <AiOutlinePlus /></button>
+              </Link>
+            </div>
           </div>
-          <div className='Dashboard-content'>
-          {plants && plants.length > 0 ? (
-              plants.map((plant) => <Card plant={plant} key={plant.id} />)
-            ) : (
-              <p>No plants found</p>
-            )}
-          </div>
-          <div className='Dashboard-button'>
-            <Link to="/new-plant">
-              <button className="Dashboard-new-btn Dashboard-btn">New Plant <AiOutlinePlus /></button>
-            </Link>
-          </div>
-        </div>
-    </div>
+      </motion.div>
+    </AnimatePresence>
   )
 }
 
