@@ -46,7 +46,14 @@ The server will be running on `http://localhost:3000/`
 
 ### Screenshots
 
-> screenshots will be here
+> FloraFriend homepage
+![](./imgs/home.png)
+> See all of your plants
+![](./imgs/all-plants.png)
+> See more details about your plants
+![](./imgs/plant-details-page.png)
+> About page
+![](./imgs/about.png)
 
 #### Author
 José Antônio ©️ 2023
