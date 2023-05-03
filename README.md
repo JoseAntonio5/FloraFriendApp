@@ -1,4 +1,4 @@
-# FloraFriend App
+# FloraFriend App 🌱
 
 ### About the project
 
@@ -20,7 +20,7 @@ FloraFriend is a web application that helps you keep track of your plants. You c
 - Express
 - SQLite
 
-### Run it locally
+### Run it locally 🖥️
 
 1. Clone the repo
    ```sh
@@ -44,7 +44,7 @@ FloraFriend is a web application that helps you keep track of your plants. You c
 
 The server will be running on `http://localhost:3000/`
 
-### Screenshots
+### Screenshots 
 
 > FloraFriend homepage
 ![](./imgs/home.png)
