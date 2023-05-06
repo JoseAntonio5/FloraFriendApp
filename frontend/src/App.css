@@ -480,6 +480,27 @@ button.Dashboard-new-btn.Home-btn {
   font-style: italic;
 }
 
+/* 404 PAGE */
+
+.NotFound-content {
+  color: #fff;
+  text-align: center;
+
+  text-shadow: 0 0 5px #000;
+}
+
+.NotFound-content h1 {
+  font-size: 5rem;
+}
+
+.NotFound-content img {
+  width: 380px;
+}
+
+.NotFound-content h3 {
+  margin: 1rem 0;
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 1440px) {
@@ -627,6 +648,14 @@ button.Dashboard-new-btn.Home-btn {
 
   .About-content {
     padding: 1rem;
+  }
+
+  .NotFound-content img {
+    width: 200px;
+  }
+
+  .NotFound-content h1 {
+    font-size: 2rem;
   }
 
 }
