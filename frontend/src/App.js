@@ -7,6 +7,7 @@ import PlantDetails from './components/PlantDetails';
 import UpdatePlantForm from './components/UpdatePlantForm';
 import About from './components/About';
 import Home from './components/Home';
+import NotFound from './components/NotFound';
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function App() {
             <Route path="/plants/:id" element={<PlantDetails />} />
             <Route path="/plants/:id/update" element={<UpdatePlantForm />} />
             <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
     </div>
