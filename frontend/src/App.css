@@ -160,6 +160,14 @@ button.Dashboard-new-btn.Home-btn {
   cursor: pointer;
 }
 
+.Dashboard-plants-not-found {
+  font-size: 2rem;
+  text-align: center;
+  margin: 4rem 0;
+  color: white;
+  text-shadow: 0 0 5px #000;
+}
+
 /* CARD COMPONENT */
 
 .Card {

@@ -61,7 +61,7 @@ function Dashboard() {
             {plants && plants.length > 0 ? (
                 plants.map((plant) => <Card plant={plant} key={plant.id} />)
               ) : (
-                <p>No plants found</p>
+                <h3 class="Dashboard-plants-not-found">Sorry, no plants found.</h3>
               )}
             </motion.div>
             <div className='Dashboard-button'>
